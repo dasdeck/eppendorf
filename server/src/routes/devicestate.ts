@@ -4,8 +4,6 @@ import {Express} from 'express'
 
 export default (app:Express) => {
 
-    console.log('ROUTES')
-
     app.get('/devicestate/:id', (req, res) => {
 
         console.log(req.params)

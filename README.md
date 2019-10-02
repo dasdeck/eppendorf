@@ -12,6 +12,7 @@ run development server/client: `yarn watch`
 
 ## next
 
+    + fix api tests
     + error handling / logging
     + form generator for react to edit and add entries
     + router for react
