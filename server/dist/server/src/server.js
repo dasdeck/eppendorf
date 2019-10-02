@@ -4,7 +4,8 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var express_1 = __importDefault(require("express"));
-var app = express_1.default();
-app.listen(3001, function () {
-    console.log('started');
-});
+var devicestate_1 = __importDefault(require("./routes/devicestate"));
+var server = express_1.default();
+devicestate_1.default(server);
+//
+exports.default = server;

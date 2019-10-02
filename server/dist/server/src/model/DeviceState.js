@@ -4,7 +4,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var mongoose_1 = __importDefault(require("mongoose"));
-var DeviceState = mongoose_1.default.model('DeviceState', new mongoose_1.default.Schema({
+var data = {
     id: Number,
     location: String,
     type: ["freezer", "cycler", "centrifuge", "shaker", "pipette"],
@@ -13,7 +13,11 @@ var DeviceState = mongoose_1.default.model('DeviceState', new mongoose_1.default
     price: Number,
     color: {
         type: String,
-        validate: function (value) { return value.substring(0) === '#'; } //@TODO oversimplified validator, replace with color class
+        validate: function (value) { return value.substring(0, 1) === '#'; } //@TODO oversimplified validator, replace with color class
     }
-}));
-exports.DeviceState = DeviceState;
+};
+exports.data = data;
+var schema = new mongoose_1.default.Schema(data);
+exports.schema = schema;
+var model = mongoose_1.default.model('DeviceState', schema);
+exports.model = model;

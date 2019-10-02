@@ -1,6 +1,6 @@
 import mongoose from 'mongoose'
 
-let DeviceState = mongoose.model('DeviceState', new mongoose.Schema({
+let data = {
     id: Number, //@TODO narrow down to integer
     location: String,
     type: ["freezer", "cycler", "centrifuge", "shaker", "pipette"],
@@ -9,11 +9,16 @@ let DeviceState = mongoose.model('DeviceState', new mongoose.Schema({
     price: Number,
     color: {
         type: String,
-        validate: (value:String) => value.substring(0) === '#' //@TODO oversimplified validator, replace with color class
+        validate: (value:String) => value.substring(0, 1) === '#' //@TODO oversimplified validator, replace with color class
     }
+}
 
-}))
+let schema = new mongoose.Schema(data)
+
+let model = mongoose.model('DeviceState', schema)
 
 export {
-    DeviceState
+    data,
+    schema,
+    model
 }

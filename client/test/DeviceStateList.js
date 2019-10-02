@@ -1,9 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App';
+import DeviceStateList from '../src/DeviceStateList';
+
+// lifted from react project generator
+// TODO wait for the list to render
 
 it('renders without crashing', () => {
   const div = document.createElement('div');
-  ReactDOM.render(<App />, div);
+  ReactDOM.render(<DeviceStateList />, div);
   ReactDOM.unmountComponentAtNode(div);
 });

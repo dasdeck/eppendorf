@@ -1,13 +1,27 @@
 # stack
 
-angular
-http://schemaform.io/
-https://www.apollographql.com/docs/angular/basics/setup/
+requires `mongodb`
+
+install: `yarn'
+
+configure database and server port (server port has to be 3001 for now): `config.js`
+
+initialize dev database with test data: `yarn --cwd server initdb`
+
+run development server: `yarn watch`
 
 
-https://www.npmjs.com/package/graphql-compose-mongoose
-mongoose
+## next
 
+    + use form renderer for react to edit and add entries
+    + use router for react
+    + user react-redux
+
+## notes
+
+react
+    + enforces a stronger structure / more opinionated(?)
+    + no two way data binding by default (cleaner data flow)
 
 ## considerations
 
@@ -15,16 +29,42 @@ Since the requirements of the projects are very broad, and my experience when it
 
 ### shortcomings
 
-    + vue-js is less standardized as react but more focused
     + no testing on client side
-    + sparse client, no infrastructure
-    + current setup is completely insecure
+    + sparse client, no infrastructure (router, etc.)
+    + completely insecure
     + no deployment strategy
-    + no variability consideration in runtime environment
+    + no limitation consideration of runtime environment
+
+
+
+## server
+
+
+### pattern
+
+    + stateless for easy scalability
+        + scale simple sessions with fast database
+    + tread routes in a decoupled manner
+
+### tech-stack
+
+    + mongodb (easiest tooling / setup, native feeling to javascript)
+    + node (one language for server and client, fast for simple data access)
+    + expressjs (mainstream known technology, scalable and fast enough)
+    + moongose (convenient database access, simple mongo would have been sufficient though)
+    + typescript (typing and interfacing, not useful at this point except simple tooling for modern JS)
+
+
+## client
+
+
+### tech-stack
+
+    + react
+
 
 ### tech-options
 
-    + typescript (typing and interfacing)
     + meteor (out of the box full stack)
     + react (get rid of default reactivity, more advanced tooling)
     + angular (native TS support, more boilerplate)
@@ -39,33 +79,3 @@ Since the requirements of the projects are very broad, and my experience when it
     + use mongo schema and form builders
     + use a more specific REST api framework / database layer for server
     + use a relational database (?)
-
-## server
-
-
-### pattern
-
-    + stateless for easy scalability
-        + scale simple sessions with fast database
-    + tread routes in a decoupled micro-service manner
-
-### tech
-
-    + mongodb (easiest tooling / setup, native feeling to javascript)
-    + node (one language for server and client, fast for simple data access)
-    + expressjs (mainstream known technology, scalable and fast enough)
-    + moongose (convenient database access)
-
-## client
-
-### pattern
-
-    + simple single page app with store for team scalability
-
-
-### tech
-
-    + vuejs (no architectural lock in / light weight, known software)
-    + vuex (scalable structure/pattern)
-    + axios (simple promise based api, works on server)
-
