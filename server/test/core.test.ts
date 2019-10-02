@@ -1,6 +1,7 @@
 
 import {model} from '../src/model/devicestate'
-import {resetDB, connect} from './util'
+import {connect} from './util'
+import {resetDB} from '../util'
 
 describe('query', () => {
 

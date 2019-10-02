@@ -4,9 +4,10 @@
   "description": "eppendorf demo server",
   "main": "index.js",
   "scripts": {
+    "build": "tsc",
     "initdb": "node dist/server/util.js --initdb",
     "test": "jest",
-    "watch": "concurrently --kill-others 'tsc --watch' 'nodemon ./dist/server'"
+    "watch": "concurrently --kill-others 'tsc --watch' 'nodemon ./dist'"
   },
   "author": "jm",
   "license": "MIT",

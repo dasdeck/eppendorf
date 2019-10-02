@@ -1,6 +1,7 @@
 
 // import {model} from '../src/model/DeviceState'
-import {resetDB, connect} from './util'
+import {connect} from './util'
+import {resetDB} from '../util'
 import server from '../src/server'
 import request from 'supertest'
 

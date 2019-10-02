@@ -2,26 +2,22 @@
 
 requires `mongodb`
 
-install: `yarn'
+install with: `yarn`
 
-configure database and server port (server port has to be 3001 for now): `config.js`
+configure database and server port (server port has to be 3001 for now): `server/config.js`
 
-initialize dev database with test data: `yarn --cwd server initdb`
+initialize database with demo data: `yarn --cwd server initdb`
 
-run development server: `yarn watch`
-
+run development server/client: `yarn watch`
 
 ## next
 
-    + use form renderer for react to edit and add entries
-    + use router for react
-    + user react-redux
+    + error handling / logging
+    + form generator for react to edit and add entries
+    + router for react
+    + react-redux
 
 ## notes
-
-react
-    + enforces a stronger structure / more opinionated(?)
-    + no two way data binding by default (cleaner data flow)
 
 ## considerations
 
@@ -35,10 +31,7 @@ Since the requirements of the projects are very broad, and my experience when it
     + no deployment strategy
     + no limitation consideration of runtime environment
 
-
-
 ## server
-
 
 ### pattern
 
@@ -50,21 +43,21 @@ Since the requirements of the projects are very broad, and my experience when it
 
     + mongodb (easiest tooling / setup, native feeling to javascript)
     + node (one language for server and client, fast for simple data access)
-    + expressjs (mainstream known technology, scalable and fast enough)
+    + express (mainstream known technology, scalable and fast enough)
     + moongose (convenient database access, simple mongo would have been sufficient though)
     + typescript (typing and interfacing, not useful at this point except simple tooling for modern JS)
 
-
 ## client
 
-
-### tech-stack
+### tech-stack (client)
 
     + react
-
+        + enforces a stronger structure / more opinionated(?)
+        + no two way data binding by default (cleaner data flow)
 
 ### tech-options
 
+    + next ist the current stack as a default package, my experience with nuxt are discouraging though
     + meteor (out of the box full stack)
     + react (get rid of default reactivity, more advanced tooling)
     + angular (native TS support, more boilerplate)
@@ -74,7 +67,6 @@ Since the requirements of the projects are very broad, and my experience when it
         + offers great tooling,
         + some definitions can be tech agnostic
         - overkill for the current requirements
-
 
     + use mongo schema and form builders
     + use a more specific REST api framework / database layer for server
