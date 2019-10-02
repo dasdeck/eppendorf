@@ -1,0 +1,30 @@
+{
+  "name": "eppendorf-server",
+  "version": "1.0.0",
+  "description": "eppendorf demo server",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "tsc": "tsc"
+  },
+  "author": "jm",
+  "license": "MIT",
+  "dependencies": {
+    "@types/mongoose": "^5.5.18",
+    "express": "^4.17.1",
+    "mongoose": "^5.7.3"
+  },
+  "jest": {
+    "preset": "ts-jest",
+    "testMatch": [
+      "**/eppendorf/server/test/*.ts"
+    ]
+  },
+  "devDependencies": {
+    "@types/jest": "^24.0.18",
+    "@types/express": "^4.17.1",
+    "jest": "^24.9.0",
+    "ts-jest": "^24.1.0",
+    "typescript": "^3.6.3"
+  }
+}

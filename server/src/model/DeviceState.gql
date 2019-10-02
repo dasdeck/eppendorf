@@ -1,0 +1,25 @@
+enum DeviceType {
+    freezer
+    cycler
+    centrifuge
+    shaker
+    pipette
+}
+
+enum DeviceHealth {
+    good
+    ok
+    broken
+    bad
+    mediocre
+}
+
+type DeviceState {
+    id: Int!
+    location: String!
+    type: DeviceType!
+    device_health: DeviceHealth!
+    last_used: Szting!
+    price: Float!
+    color: String!
+}

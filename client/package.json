@@ -1,0 +1,11 @@
+{
+  "name": "eppendorf-client",
+  "version": "1.0.0",
+  "description": "eppendorf demo client",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "jm",
+  "license": "MIT"
+}
