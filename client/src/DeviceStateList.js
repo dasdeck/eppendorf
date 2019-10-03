@@ -30,8 +30,8 @@ class DeviceStateList extends React.Component {
           {this.state.entries.map(entry => {
             return <li
             // style={`color:${entry.color}`}
-            key={`entrie-${entry.id}`}>{entry.location}>
-
+            key={`entrie-${entry.id}`}>
+            {entry.location}
             <button onClick={this.deleteEntry(entry.id)}>delete</button>
             </li>
           })}
